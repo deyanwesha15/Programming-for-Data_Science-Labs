@@ -124,3 +124,93 @@ while number >= 0:
     number -= 1
 
 print("Countdown finished!")
+
+# Problem 6: Countdown
+
+number = int(input("Enter a non-negative integer: "))
+
+if number < 0:
+    print("Please enter a non-negative integer.")
+else:
+    while number >= 0:
+        print(number)
+        number -= 1
+       
+ # Problem 7: Student Record Analyzer
+
+students = [
+    {"name": "Rahim", "department": "CSE",
+     "marks": 85, "attendance": 92},
+
+    {"name": "Karim", "department": "CSE",
+     "marks": 48, "attendance": 76},
+
+    {"name": "Sara", "department": "DS",
+     "marks": 91, "attendance": 95},
+
+    {"name": "Nadia", "department": "DS",
+     "marks": 67, "attendance": 84},
+
+    {"name": "Hasan", "department": "CSE",
+     "marks": 73, "attendance": 78}
+]
+
+passed_students = 0
+total_marks = 0
+highest_student = students[0]
+
+for student in students:
+    print(
+        "Name:", student["name"],
+        "| Marks:", student["marks"]
+    )
+
+    total_marks += student["marks"]
+
+    if student["marks"] >= 50:
+        passed_students += 1
+
+    if student["marks"] > highest_student["marks"]:
+        highest_student = student
+
+average = total_marks / len(students)
+
+print("\n----- Class Summary -----")
+print("Total Students:", len(students))
+print("Passed Students:", passed_students)
+print("Class Average:", average)
+print("Highest Mark:", highest_student["marks"])
+print("Top Student:", highest_student["name"])
+
+# Problem 8: Product Inventory Summary
+
+products = [
+    {"name": "Notebook", "price": 120, "quantity": 3},
+    {"name": "Pen", "price": 20, "quantity": 5},
+    {"name": "USB Drive", "price": 850, "quantity": 2},
+    {"name": "Mouse", "price": 650, "quantity": 1}
+]
+
+total_inventory_value = 0
+highest_product = None
+highest_line_total = 0
+
+for product in products:
+    line_total = product["price"] * product["quantity"]
+
+    print(
+        "Product:", product["name"],
+        "| Line Total:", line_total
+    )
+
+    total_inventory_value += line_total
+
+    if line_total > highest_line_total:
+        highest_line_total = line_total
+        highest_product = product["name"]
+
+print("\n----- Inventory Summary -----")
+print("Total Inventory Value:", total_inventory_value)
+print("Highest Value Product:", highest_product)
+print("Highest Line Total:", highest_line_total)
+
